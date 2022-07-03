@@ -59,5 +59,6 @@ member: {
 bank: {
     nameBank: string,
     nomorRekening: string,
-    name: string
+    name: string,
+    imageUrl: string
 }
