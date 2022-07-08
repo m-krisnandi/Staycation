@@ -97,12 +97,24 @@
   </div>
 </div>
 
+<%- include('show_modal_Activity.ejs') %>
 <%- include('show_modal_Feature.ejs') %>
 <%- include('../../../partials/js.ejs') %>
 <script>
   // show data table activity
   $(document).ready(function () {
     $('#dataTableActivity').DataTable();
+  });
+
+  $('#dataTableActivity').on('click', '.button-update', function () {
+    let id = $(this).data('id');
+    let name = $(this).data('name');
+    let type = $(this).data('type');
+    // console.log(id + name);
+    $('#edit-modal').modal('show');
+    $('.id').val(id);
+    $('.name').val(name);
+    $('.type').val(type);
   });
 
   $('#dataTable').on('click', '.button-update', function () {
