@@ -10,6 +10,13 @@ image: {
     imageUrl: string
 }
 
+bank: {
+    nameBank: string,
+    nomorRekening: string,
+    name: string,
+    imageUrl: string
+}
+
 item: {
     title: string,
     price: number,
@@ -48,18 +55,23 @@ activity: {
 booking: {
     bookingStartDate: date,
     bookingEndDate: date,
-    itemId: [{
+    invoice: string,
+    itemId: {
         _id: ObjectId,
+        title: string,
         price: number,
-        night: number
-    }]
-    memberId: [{ _id: ObjectId }],
-    bankId: [{ _id: ObjectId }],
-    proofPayment: string,
-    bankFrom: string,
-    accountHolder: string,
-    imageUrl: string,
-    status: string
+        duration: number
+    },
+    total: number,
+    memberId: { _id: ObjectId },
+    bankId: { _id: ObjectId },
+    payments: {
+        proofPayment: string,
+        bankFrom: string,
+        accountHolder: string,
+        imageUrl: string,
+        status: string
+    }
 }
 
 member: {
@@ -69,9 +81,7 @@ member: {
     phoneNumber: string
 }
 
-bank: {
-    nameBank: string,
-    nomorRekening: string,
-    name: string,
-    imageUrl: string
+user: {
+    username: string,
+    password: string
 }
