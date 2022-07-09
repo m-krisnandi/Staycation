@@ -69,7 +69,6 @@ booking: {
         proofPayment: string,
         bankFrom: string,
         accountHolder: string,
-        imageUrl: string,
         status: string
     }
 }
